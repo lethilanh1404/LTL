@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tomato Children's Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header-inner">
+          <nav class="nav">
+            <a href="home.html#h2_home">Học cùng con</a>
+            <a href="album.html#h2_album">Thư viện ảnh</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <section class="hero"></section>
+    <div class="container">
+      <section class="intro">
+        <h2 id="h2_album">THƯ VIỆN ẢNH</h2>
+
+        <!-- Tabs -->
+        <div class="pill-group">
+          <p class="pill active" data-target="gallery-a">
+            Hoạt động tại Trường học
+          </p>
+          <p class="pill" data-target="gallery-b">Không gian Trường học</p>
+        </div>
+
+        <!-- Gallery A -->
+        <div class="gallery-wrapper active" id="gallery-a">
+          <div class="gallery">
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/A_001.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/A_002.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/A_003.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/A_004.jpg&quot;)"
+            ></div>
+
+            <div
+              class="gallery-item large"
+              style="background-image: url(&quot;images/A_005.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item wide"
+              style="background-image: url(&quot;images/A_006.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item tall"
+              style="background-image: url(&quot;images/A_007.jpg&quot;)"
+            ></div>
+
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/A_008.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/A_009.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/A_010.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/A_011.jpg&quot;)"
+            ></div>
+          </div>
+        </div>
+
+        <div class="gallery-wrapper" id="gallery-b">
+          <div class="gallery">
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/B_001.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/B_002.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/B_003.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/B_004.jpg&quot;)"
+            ></div>
+
+            <div
+              class="gallery-item large"
+              style="background-image: url(&quot;images/B_005.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item wide"
+              style="background-image: url(&quot;images/B_006.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item tall"
+              style="background-image: url(&quot;images/B_007.jpg&quot;)"
+            ></div>
+
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/B_008.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/B_009.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/B_010.jpg&quot;)"
+            ></div>
+            <div
+              class="gallery-item"
+              style="background-image: url(&quot;images/B_011.jpg&quot;)"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="lightbox" id="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <img id="lightbox-img" src="" alt="preview" />
+    </div>
+  </body>
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox-close");
+
+    const pills = document.querySelectorAll(".pill");
+    const galleries = document.querySelectorAll(".gallery-wrapper");
+
+    pills.forEach((pill) => {
+      pill.addEventListener("click", () => {
+        pills.forEach((p) => p.classList.remove("active"));
+        galleries.forEach((g) => g.classList.remove("active"));
+
+        pill.classList.add("active");
+        document.getElementById(pill.dataset.target).classList.add("active");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      const item = e.target.closest(".gallery-item");
+      if (!item) return;
+
+      const bg = getComputedStyle(item).backgroundImage;
+      const match = bg.match(/url\(["']?(.*?)["']?\)/);
+
+      if (match && match[1]) {
+        lightboxImg.src = match[1];
+        lightbox.classList.add("show");
+      }
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.classList.remove("show");
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove("show");
+      }
+    });
+  </script>
+</html>
