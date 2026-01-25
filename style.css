@@ -352,3 +352,72 @@ body {
 .gallery-wrapper.active {
   display: block;
 }
+
+.post-content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+/* Title */
+.post-content .title {
+    font-size: 40px;
+    font-weight: 800;
+    color: #4a463d;
+    margin-bottom: 15px;
+}
+
+/* Meta info */
+.post-content .meta {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 25px;
+}
+
+.post-content .meta span {
+    margin-right: 15px;
+}
+
+/* Paragraph */
+.post-content p {
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.post-content .intro {
+    font-weight: 500;
+}
+
+/* Headings */
+.post-content h2 {
+    font-size: 22px;
+    margin: 30px 0 15px;
+    color: #3f3b33;
+}
+
+.post-content h3 {
+    font-size: 18px;
+    margin: 25px 0 10px;
+    color: #3f3b33;
+}
+
+/* List */
+.post-content ul {
+    margin-left: 40px;
+    margin-bottom: 25px;
+}
+
+.post-content ul li {
+    margin-bottom: 10px;
+}
+
+/* Image */
+.post-content .image-box {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.post-content .image-box img {
+    max-width: 100%;
+    border-radius: 8px;
+}
