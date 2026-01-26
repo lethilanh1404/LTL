@@ -56,8 +56,8 @@ body {
   margin: 20px auto;
   width: 100%;
   max-width: 1600px;
-
   aspect-ratio: 16 / 6;
+  min-height: 600px;
 }
 
 /* INTRO */
@@ -85,6 +85,7 @@ body {
   text-align: left;
   font-size: 24px;
   font-weight: 500;
+  text-indent: 20px; 
 }
 
 .intro-image {
