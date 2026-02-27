@@ -65,7 +65,7 @@ body {
   padding: 40px 20px;
 }
 
-.intro h2 {
+.intro h2, .title {
   color: #4caf50;
   margin-bottom: 20px;
   font-size: 40px;
@@ -99,7 +99,7 @@ body {
 
 /* ARTICLES */
 .articles {
-  padding: 40px 0;
+  padding:  0;
 }
 
 .grid {
@@ -421,4 +421,33 @@ body {
 .post-content .image-box img {
     max-width: 100%;
     border-radius: 8px;
+}
+
+.shared .card {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.review-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.card .date {
+  font-size: 12px;
+  color: #999;
+  margin-top: 4px;
+}
+
+.card img {
+  max-width: 300px;
+}
+
+.review img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
 }
